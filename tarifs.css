@@ -1,0 +1,47 @@
+.tarif_header{
+    vertical-align: top;
+    width: 300;
+    border: 3px solid rgb(204, 245, 249);
+    border-radius: 8px;
+    background-color: #393e46; opacity: 95%;
+}
+.tarif_header_border
+{
+    padding: 10;
+    border: 3px solid rgb(204, 245, 249);
+    font-weight: 800;
+}
+ul
+{
+ color: white;
+}
+.tarif_main_info {
+    font-size: 16px;
+    text-align: left;
+}
+.tarif_desc {
+    font-size: 14px;
+    opacity: .7;
+    text-align: left;
+}
+.tarif_price_border{
+    height: 30;
+    border: 3px solid rgb(204, 245, 249);
+    border-radius: 8px;
+    background-color: #393e46; opacity: 95%;
+    padding: 10;
+    vertical-align: center;
+}
+.tarif_price {
+    text-align: center;
+    font-size: 20px;
+}
+.tarif_price:hover{
+    color: rgb(0, 173, 181);
+    text-align: center;
+    font-size: 24px;
+}
+.tarif_buy{
+    text-align: center;
+    font-size: 20px;
+}

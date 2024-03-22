@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="main_style.css">
+<title> Регистрация </title>
+<meta charset="utf-8">
+  <title>Навигация</title>
+  <script type="text/javascript">
+    function setCookie(cname, cvalue, exdays) 
+  {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  const expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+//     function getCookie(cname) {
+//   const name = cname + "=";
+//   const decodedCookie = decodeURIComponent(document.cookie);
+//   const ca = decodedCookie.split(';');
+//   for(let i = 0; i <ca.length; i++) {
+//     let c = ca[i];
+//     while (c.charAt(0) === ' ') {
+//       c = c.substring(1);
+//     }
+//     if (c.indexOf(name) === 0) {
+//       return c.substring(name.length, c.length);
+//     }
+//   }
+//   return "";
+// }
+
+// Проверка наличия cookie
+function checkCookie() {
+  // const email = getCookie("email");
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  if (email !== "") 
+  {
+    // Update existing cookie value
+    setCookie("email", email, 7);
+    console.log("Cookie updated");
+  } 
+  else 
+  {
+    // Create new cookie
+    setCookie("email", email, 7);
+    console.log("New cookie created");
+  }
+  // const password = getCookie("password");
+  if (password !== "") 
+  {
+    // Update existing cookie value
+    setCookie("password", password, 7);
+    console.log("Cookie updated");
+  } 
+  else 
+  {
+    // Create new cookie
+    setCookie("password", password, 7);
+    console.log("New cookie created");
+  }
+}
+</script>
+  <style>
+</style>
+</head>
+
+<body>
+  <header>
+    <table style="background-color: #393e46;">
+        <tr>
+            <td><a href="news and updates.html" class="head-item"><img src="logo\123.png" width="140" height="80"></a></td>
+            <td width = 200 align="center"><p><a href="tarifs.html" class="head-item">Тарифы </a></p></td>
+            <td width = 200 align="center"><p><a href="news and updates.html" class="head-item">Новости и обновления </a></p></td>
+            <!-- <td width = 200 align="center"><p><a href="achievements.html" class="head-item"> Достижения </a></p></td> -->
+            <!-- <td width = 200 align="center"><p><a href="Чат поддержки.html" class="head-item"> Чат поддержки </a></p></td> -->
+            <td width = 2000></td>
+            <td width = 200 align="center"> <p><a href="registration.html" class="head-item"> регистрация </a><br></p><a href="login.html" class="head-item">вход </a> </td>
+        </tr>
+    </table>
+  </header>
+<main>
+<h4 style="position: relative;text-align:center;">
+   <div class="circle"></div>
+
+  <div class="refister-form-container">
+
+    <h1 class="form-title" style="color: white;">
+      Вход
+    </h1>
+    </div>
+
+
+<form action="login.php" method="post">
+    <div><label for="email"><p>Ваша Почта:</p></label></div>
+    <input  name="email" type="text" id="email" required>
+    <br>
+    <div><label for="password"><p>Ваш Пароль:</p></label></div>
+    <input  name="password" type="number" id="password" required>
+    <br>
+    <br>
+    <button type = "submit"  class="password-reset" width = 200 onclick="checkCookie()"><p align="center">Вход </a></p></td></button>
+</form>
+
+</h4>
+
+</main>
+
+</body>
+
+</html>

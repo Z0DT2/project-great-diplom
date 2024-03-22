@@ -1,0 +1,51 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../main_style.css">
+    <link rel="stylesheet" href="../tarifs.css">
+    <style>
+        label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <table style="background-color: #393e46;">
+            <tr>
+                <td><a href="../news and updates.html" class="head-item"><img src="../logo/123.png" width="140" height="80"></a></td>
+                <td width = 200 align="center"><p><a href="../tarifs.html" class="head-item">Тарифы </a></p></td>
+                <td width = 200 align="center"><p><a href="../news and updates.html" class="head-item">Новости и обновления </a></p></td>
+                <!-- <td width = 200 align="center"><p><a href="../achievements.html" class="head-item"> Достижения </a></p></td> -->
+                <!-- <td width = 200 align="center"><p><a href="../Чат поддержки.html" class="head-item"> Чат поддержки </a></p></td> -->
+                <td width = 2000></td>
+                <td width = 200 align="center"> <p><a href="../registration.html" class="head-item"> регистрация </a><br></p><a href="../login.html" class="head-item">вход </a></td>
+            </tr>
+        </table>
+    </header>
+</body>
+<br>
+<table align="center" style="background-color: #393e46; opacity: 95%;">
+    <tr>
+        <td><table><tr><td align="center"><p>Вы уверены что хотите подключить тариф ?</p></td></tr>
+        <tr><td align="center"><form action="../buytarif.php" method="post">
+            <br>
+            <input type="hidden" name="id_type" value=12>
+            <div> <label for="adress">Город, улица, дом, квартира:</label></div>
+            <input name="adress" type="text">
+        
+            <div></div><label for="name">Ваше ФИО:</label></div><br>
+            <input  name="name" type="text">
+        
+            <div><label for="phone">Ваш номер телефона:</label></div>
+            <input  name="phone" type="number">
+            <br>
+            <p>Наши менеджеры свяжутся с Вами в ближайший час</p>
+
+            <button type="submit" class="tarif_buy">Оплатить</button></form></td></tr></table></td> 
+        <td><table align="center" style="background-color: #393e46; opacity: 95%;" cellspacing = "20px" border="0">
+        <tr>
+            <td class="tarif_header"><h1 class = "tarif_header_border">Игровой</h1>
+                <ul><li><div class="tarif_main_info">800 Мбит/с</div><div class="tarif_desc">безлимитный интернет</div></li></ul></td>
+        </tr>
+</table>
+</html>

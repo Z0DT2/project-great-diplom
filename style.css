@@ -1,0 +1,30 @@
+
+input{
+    height: 40px;
+    width: 20%;
+    font-size: 14px;
+    line-height: 16px;
+    border: 2px solid #E9f2ff;
+    border-radius: 5px;
+}
+
+
+.register-form-container{
+    max-width: 415px;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 50px rgba(217, 229, 255, 0.7);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.form-title{
+    color: #30507D;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.form-field{
+    margin-bottom: 13px;
+}
