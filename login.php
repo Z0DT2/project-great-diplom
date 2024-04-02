@@ -19,8 +19,7 @@ if  (!$user)
   echo "query did not execute";
 }
 
-//кукиенаме
-//мурлоки мрази
+
 
 
 $result = pg_fetch_assoc($user);
