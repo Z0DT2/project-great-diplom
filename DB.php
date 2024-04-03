@@ -37,7 +37,7 @@ else
 {
   echo '<script>alert("ошибка регистрации.")</script>';
   echo '<script>window.location.href = "registration.html"</script>';
-  // header("Location: /PFTC_/registration.html");
+  // header("Location: /project-great-diplom/registration.html");
 }
 }
 //$povtor = "SELECT * FROM users WHERE email = '$email' "
