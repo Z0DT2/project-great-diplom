@@ -27,14 +27,14 @@ if ($result['rows']==0)
 
 { 
   echo '<script>alert("ошибка входа.")</script>';
-  header("Location: /PFTC_last/login.html");
+  header("Location:/project-great-diplom/login.html");
   // header("Location: /PFTC_/123.html");
 }
 
 else
 
 { 
-  header("Location: /PFTC_last/personal area.html");
+  header("Location:/project-great-diplom/personal area.html");
 // echo "<a href='personal area.html' >Имя файла</a><br>";
 // $target = 'personal area.html'; // Это уже существующий файл
 // $link = 'newfile.ext'; // Это файл, который вы хотите привязать к первому

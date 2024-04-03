@@ -29,7 +29,7 @@ if ($result['rows']==0)
   $query = pg_query($db_connection,"INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')");
 
   //$povtor = pg_query($db_connection,"SELECT count(*) AS rows FROM users WHERE email = '$email'");
-  header("Location: /PFTC_last/personal area.html");
+  header("Location: /project-great-diplom/personal area.html");
   // header("Location: https://example.com");
 }
 

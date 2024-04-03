@@ -13,7 +13,7 @@ if (isset($_COOKIE['name']) && isset($_COOKIE['password']) && isset($_COOKIE['em
     if ($oldpassword == $oldpasswordcookie and $newpassword == $newpasswordrep)
     {
         $temppassword = pg_query($db_connection,"UPDATE users SET password = '$newpassword'  WHERE email = '$email' AND password = '$oldpassword'");
-        header("Location: /PFTC_/login.html");
+        header("Location: /project-great-diplom/login.html");
     }
     else 
     echo '<script>alert("вы ввели неправильный старый пароль или не повторили новый.")</script>';
