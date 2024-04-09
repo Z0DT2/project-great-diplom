@@ -6,7 +6,7 @@ const chatbox = document.querySelector(".chatbox");
  
 let userMessage;
 const API_KEY = 
-    "AQVN0N97paxDE7TvqwpC6XTmiNd8bqwJNuq7OXw5";
+    "AQVN0N97paxDE7TvqwpC6XTmiNd8bqwJNuq7OXw5"; //Заменить
  
 //OpenAI Free APIKey
  
@@ -20,7 +20,7 @@ const createChatLi = (message, className) => {
 }
  
 const generateResponse = (incomingChatLi) => {
-    const API_URL = "https://console.yandex.cloud/folders/b1gb9t9i89gt7uuugdb1/yandexgpt/chat";
+    const API_URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"; //заменить
     const messageElement = incomingChatLi
     .querySelector("p");
     const requestOptions = {
@@ -93,3 +93,8 @@ function cancel() {
         document.body.appendChild(lastMsg)
     }
 }
+
+
+
+
+    

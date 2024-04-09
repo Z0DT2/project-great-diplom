@@ -48,6 +48,7 @@
     setCookie("name", name, 7);
     console.log("New cookie created");
   }
+
 }
 </script>
   <style>
@@ -61,7 +62,7 @@
             <td><a href="news and updates.html" class="head-item"><img src="logo\123.png" width="140" height="80"></a></td>
             <td width = 200 align="center"><p><a href="tarifs.html" class="head-item">Тарифы </a></p></td>
             <td width = 200 align="center"><p><a href="news and updates.html" class="head-item">Новости и обновления </a></p></td>
-             <td width = 200 align="center"><p><a href="achievements.html" class="head-item"> Достижения </a></p></td> 
+             <td width = 200 align="center"><p><a href="achievements.html" class="head-item"> Поддержка </a></p></td> 
             <!-- <td width = 200 align="center"><p><a href="Чат поддержки.html" class="head-item"> Чат поддержки </a></p></td> -->
             <td width = 2000></td>
             <td width = 200 align="center"> <p><a href="registration.html" class="head-item"> регистрация </a><br></p></p><a href="login.html" class="head-item">вход </a></td>
@@ -80,9 +81,10 @@
 
     <div class="form-fields">
 
-<form action="DB.php" method="post">
 
-    <div> <label for="name"><p>Логин:</p></label> </div>
+<form action="DB.php" method="POST">
+
+  <div> <label for="name"><p>Логин:</p></label> </div>
     <input name="name" type="text" id = "name" required>
 
     <div></div><label for="email"><p>Почта:</p></label></div>
@@ -96,7 +98,8 @@
     <br>
     <button type = "submit" width = 200 class = "password-reset" onclick="checkCookie()"><p align="center">Зарегистрироваться</button>
 
-</form>
+</form>  
+
 
 </h4>
 
