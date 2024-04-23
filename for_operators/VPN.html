@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../main_style.css">
+    <link rel="stylesheet" href="../tarifs.css">
+    <style>
+        label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <table style="background-color: #393e46;">
+            <tr>
+                <td><a href="../news and updates.html" class="head-item"><img src="../logo/123.png" width="140" height="80"></a></td>
+                <td width = 200 align="center"><p><a href="../tarifs.html" class="head-item">Тарифы </a></p></td>
+                <td width = 200 align="center"><p><a href="../news and updates.html" class="head-item">Новости и обновления </a></p></td>
+                <td width = 200 align="center"><p><a href="../achievements.html" class="head-item"> Достижения </a></p></td>
+                <td width = 200 align="center"><p><a href="../tech support.html" class="head-item"> Чат поддержки </a></p></td>
+                <td width = 2000></td>
+                <td width = 200 align="center"> <p><a href="../registration.html" class="head-item"> регистрация </a><br></p><a href="../login.html" class="head-item">вход </a></td>
+            </tr>
+        </table>
+    </header>
+</body>
+<br>
+<table align="center" style="background-color: #393e46; opacity: 95%;">
+    <tr>
+        <td><table><tr><td align="center"><p>Вы уверены что хотите оставить заявку на подключения своего сервиса VPN ?</p></td></tr>
+        <tr><td align="center"><form action="../operator application.php" method="post">
+            <br>
+            <input type="hidden" name="id_type" value=11>
+<!-- бля буду тут еще типо регион или че-то типо того короче я не шарю за всю эту хуйню -->
+<!-- вобще было бы круто все это покарсивее оформить а то выглядит уныло -->
+            <div> <label for="company_name">Название предприятия</label></div>
+            <input name="company_name" type="text">
+
+            <div> <label for="adress">Юридический адрес</label></div>
+            <input name="adress" type="text">
+        
+            <div></div><label for="name">ФИО получателя ответа:</label></div><br>
+            <input  name="name" type="text">
+        
+            <div><label for="phone">Номер телефона:</label></div>
+            <input  name="phone" type="number">
+
+            <div><label for="email">Электронная почта:</label></div>
+            <input  name="email" type="text">
+            <br>
+            <p>С вами свяжуться как только заявка будет рассмотренна</p>
+
+            <button type="submit" class="tarif_buy">оставить заявку</button></form></td></tr></table></td> 
+</table>
+</html>
