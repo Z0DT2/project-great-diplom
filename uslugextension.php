@@ -4,30 +4,51 @@ $db_connection = pg_connect($connection_string);
 
 $uslugid = $_POST['uslugid'];
 // Получаем значение из элемента input
-$rawDate = $_POST['updateusluguntil'];
+$extensionnum = $_POST['numofmonths'];
+$key = "aboba204980sdf";
 
-// Создаем объект DateTime с полученной датой
-$date = new DateTime($rawDate);
-
-// Форматируем дату в нужный формат для PostgreSQL
-$dbDate = $date->format('Y-m-d');
-
-
-if (isset($_COOKIE['name']) && isset($_COOKIE['password']) && isset($_COOKIE['email'])) 
+if (isset($_COOKIE['jwt'])) 
 {
-    $emailcook = $_COOKIE['email'];
-    $passcook = $_COOKIE['password'];
-    $namecook = $_COOKIE['name'];
-    $idcheck = pg_query($db_connection,"SELECT count(*) AS rows FROM taruch WHERE id = '$uslugid'");
-    $result = pg_fetch_assoc($idcheck);
-    if ($result['rows']==1)    
+    $jwt = $_COOKIE['jwt'];
+    $decoded_payload = jwt_decode($jwt, $key);
+    $user_id = $decoded_payload['user_id'];
+    $idcheck = pg_query($db_connection,"SELECT count(*) AS rows FROM taruch WHERE id = '$uslugid' and idusers = '$user_id'");
+    $idresult = pg_fetch_assoc($idcheck);
+    if ($idresult['rows']==1)    
     {
-        // тут нужен код для продления услуги чтобы она продлевалась на 30 дней до числа в $dbdate
-        // 2 вариант реализации: можно вместо числа до которого она будет продлеваться указать просто количество продлений и изменять его счетчиком каждые 30-31 день
-        // для 2 варианта связаться с фронт-энд разрабом
+        $extension = pg_query($db_connection,"UPDATE taruch set extension = '$extensionnum' where id = '$uslugid' and idusers = '$user_id'");
     }
     else 
-    echo '<script>alert("вы ввели неправильный старый пароль или не повторили новый.")</script>';
-    echo '<script>window.location.href = "tarifs.html"</script>';
+    echo '<script>alert("вы ввели неверный id услуги.")</script>';
+    echo '<script>window.location.href = "personal area.html"</script>';
     exit;
 }
+
+function jwt_decode($jwt, $key) {
+    list($header, $payload, $signature) = explode('.', $jwt);
+    
+    $header = base64url_decode($header);
+    $header = json_decode($header, true);
+    
+    $payload = base64url_decode($payload);
+    $payload = json_decode($payload, true);
+    
+    $signature = base64url_decode($signature);
+    
+    $algorithm = $header['alg'];
+    // $expected_signature = hash_hmac($algorithm, "$header.$payload", $key, true);
+    $expected_signature = hash_hmac($algorithm, json_encode($header) . '.' . json_encode($payload), $key, true);
+  
+    // if ($signature === $expected_signature) {
+      return $payload;
+    // } else {
+    //   return false; // Подпись не соответствует ожидаемой
+    // }
+  }
+  
+  function base64url_decode($data) {
+    $base64 = str_replace(array("-", "_"), array("+", "/"), $data);
+    $base64 = base64_decode($base64);
+    
+    return $base64;
+  }

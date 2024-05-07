@@ -35,22 +35,21 @@
       font-size: 20px;
     }
   </style>
-  <link rel="stylesheet" href="BOT/chatbot/chatbot.css">
+  <link rel="stylesheet" href="/BOT/chatbot/chatbot.css">
 </head>
 
 <body>
 
   <h1>Чат-бот «SimpleChatbot» (реплики в JSON)</h1>
-
+  <!-- FingerPrint JS -->
+  <script src="/BOT/chatbot/fp2.js"></script>
+  <!-- ChatBot JS -->
+  <script src="/BOT/chatbot/chatbot.js"></script>
   <!-- chatbot__btn -->
   <div class="chatbot__btn">
     <div class="chatbot__tooltip d-none">Есть вопрос?</div>
   </div>
-
-  <!-- FingerPrint JS -->
-  <script src="/chatbot/fp2.js"></script>
-  <!-- ChatBot JS -->
-  <script src="/chatbot/chatbot.js"></script>
+тут ну там ничего
 
   <script>
     // конфигурация чат-бота
@@ -60,11 +59,11 @@
     // ключ для хранения отпечатка браузера
     configChatbot.key = 'fingerprint';
     // реплики чат-бота
-    configChatbot.replicas = '/data/data-1.json';
+    configChatbot.replicas = '/BOT/data/data-1.json';
     // корневой элемент
     configChatbot.root = SimpleChatbot.createTemplate();
     // URL chatbot.php
-    configChatbot.url = '/chatbot/chatbot.php';
+    configChatbot.url = '/BOT/chatbot/chatbot.php';
     // переменная для хранения экземпляра
     let chatbot = null;
     // добавление ключа для хранения отпечатка браузера в LocalStorage
