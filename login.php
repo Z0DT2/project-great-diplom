@@ -2,7 +2,7 @@
 // if (isset($_COOKIE['name']) && isset($_COOKIE['password'])) 
 // {
 //   // Если файлы куки существуют, перенаправляем на личный кабинет
-//   header("Location: /PFTC_/personal area.html");;
+//   header("Location: /PFTC_/personal area.php");;
 //   exit;
 // }
 
@@ -54,10 +54,10 @@ $jwt = jwt_encode($payload, "aboba204980sdf", "sha256");
 
 // Отправка JWT токена в ответе
 setcookie("jwt", $jwt, time() + (86400 * 30), "/");
-  header("Location: /PFTC_LAST/personal area.html");
+  header("Location: personal area.php");
 
-// echo "<a href='personal area.html' >Имя файла</a><br>";
-// $target = 'personal area.html'; // Это уже существующий файл
+// echo "<a href='personal area.php' >Имя файла</a><br>";
+// $target = 'personal area.php'; // Это уже существующий файл
 // $link = 'newfile.ext'; // Это файл, который вы хотите привязать к первому
 
 // // symlink($target, $link);

@@ -52,8 +52,8 @@ if ($result['rows']==0)
  // Отправка JWT токена в ответе
  setcookie("jwt", $jwt, time() + (86400 * 30), "/");
  
- // echo "<a href='personal area.html' >Имя файла</a><br>";
- // $target = 'personal area.html'; // Это уже существующий файл
+ // echo "<a href='personal area.php' >Имя файла</a><br>";
+ // $target = 'personal area.php'; // Это уже существующий файл
  // $link = 'newfile.ext'; // Это файл, который вы хотите привязать к первому
  
  // // symlink($target, $link);
@@ -80,7 +80,7 @@ if ($result['rows']==0)
  }
 
   //$povtor = pg_query($db_connection,"SELECT count(*) AS rows FROM users WHERE email = '$email'");
-  header("Location: /PFTC_LAST/personal area.html");
+  header("Location: /PFTC_LAST/personal area.php");
   // header("Location: https://example.com");
 }
 
