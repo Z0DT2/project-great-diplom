@@ -15,35 +15,16 @@ if (isset($_COOKIE['jwt']))
 
 {
     $jwt = $_COOKIE['jwt'];
-    // // Декодирование JWT токена
-    // $jwt = base64_decode($jwt);
-    // $jwt = hash_hmac('sha256', $jwt, 'my_secret_key', true);
-    // $jwt = base64_decode($jwt);
-
-    // // Разбор данных из JWT токена
-    // $payload = json_decode($jwt, true);
-
-    // echo 'User ID: ' . $payload['user_id'];
-    // echo 'Email: ' . $payload['email'];
-
-    $decoded_payload = jwt_decode($jwt, $key);
-    $user_id = $decoded_payload['user_id'];
-    // JWT декодирован успешно
-    // Используйте $decoded_payload для дальнейших операций
-
-    // $emailcook = $_COOKIE['email'];
-    // $passcook = $_COOKIE['password'];
-    // $namecook = $_COOKIE['name'];
-    // $user_id_query = pg_query($db_connection,"SELECT * FROM users WHERE  email = '$emailcook'");
-    //echo $user_id;
+   
 
     $cost_query = pg_query($db_connection,"SELECT costs FROM tariffs WHERE id = '$type_id'");
     $cost_result = pg_fetch_assoc($cost_query);
     $cost = $cost_result['costs'];   
 
-    // $user_id_result = pg_fetch_assoc($user_id_query);
-    // $user_id = $user_id_result['id'];
-    $add = pg_query($db_connection,"INSERT INTO taruch ( id_type, secname, adress, phonenum, date, cost, idusers, expiredate) VALUES ( '$type_id', '$name', '$adress', '$phone', '$date', '$cost', '$user_id', '$expiredate')");
+
+    $add = pg_query($db_connection,"INSERT INTO taruch ( id, secname, adress, phonenum, date, cost, idusers, expiredate) VALUES ( '$type_id', '$name', '$adress', '$phone', '$date', '$cost', '$user_id', '$expiredate')");
+
+
     echo '<script>alert("заявка успешно создана.")</script>';
     echo '<script>window.location.href = "tarifs.html"</script>';
     }
@@ -54,10 +35,9 @@ else
     
         echo '<script>alert("войдите в свой аккаунт или создайте его.")</script>';
         echo '<script>window.location.href = "tarifs.html"</script>';
-        // header("Location: /PFTC_/registration.html");
+        
 }
-//"INSERT INTO "TarUch" (id_users, id_type, "SecName", "Adress", "PhoneNum", "Date", "Cost") VALUES ('$user_id', '$type_id', '$name', '$adress', '$phone', '$date', '$cost')
-// and  email = '$emailcook' and password = '$passcook'
+
 function jwt_decode($jwt, $key) {
   list($header, $payload, $signature) = explode('.', $jwt);
   
