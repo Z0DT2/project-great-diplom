@@ -36,7 +36,7 @@
         <tr valign = top><td width = 10 height = "10"><img class="pfp" src="no-image.jpg"></td></td><td valign = bottom height = "10" width = 100>Login: Example</td><td valign="top" width = 300 align="center" rowspan="4"><br><br>Активные услуги <br>
         <?php
 // Подключение к базе данных
-$connection_string = "host=localhost port=5432 dbname=Base user=postgres password=123";
+$connection_string = "host=localhost port=5432 dbname=Base user=postgres password=Sergoe";
 $db_connection = pg_connect($connection_string);
 $key = "aboba204980sdf";
 
