@@ -35,7 +35,7 @@
     <table align="center" width = 1500 height = 800 cellspacing = "20px" style="background-color: rgb(32, 26, 68);" border="0">
         <?php
 // Подключение к базе данных
-$connection_string = "host=localhost port=5432 dbname=Base user=postgres password=123";
+$connection_string = "host=localhost port=5432 dbname=Base user=postgres password=Sergoe";
 $db_connection = pg_connect($connection_string);
 $key = "aboba204980sdf";
 
