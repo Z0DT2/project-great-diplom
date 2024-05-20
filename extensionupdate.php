@@ -1,5 +1,5 @@
 <?php
-$connection_string = "host=localhost port=5432 dbname=Base user=postgres password=1";
+$connection_string = "host=localhost port=5432 dbname=Base user=postgres password=Sergoe";
 $db_connection = pg_connect($connection_string);
 date_default_timezone_set('UTC');
 
