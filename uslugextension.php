@@ -20,7 +20,7 @@ if (isset($_COOKIE['jwt']))
     }
     else 
     echo '<script>alert("вы ввели неверный id услуги.")</script>';
-    echo '<script>window.location.href = "personal area.html"</script>';
+    echo '<script>window.location.href = "personal area.php"</script>';
     exit;
 }
 
