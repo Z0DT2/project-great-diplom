@@ -35,7 +35,7 @@
     <table align="center" width = 1500 height = 800 cellspacing = "20px" style="background-color: rgb(32, 26, 68);" border="0">
         <?php
 // Подключение к базе данных
-$connection_string = "host=localhost port=5432 dbname=Base user=postgres password=Sergoe";
+$connection_string = "host=localhost port=5432 dbname=Base user=postgres password=123";
 $db_connection = pg_connect($connection_string);
 $key = "aboba204980sdf";
 
@@ -47,16 +47,16 @@ $email = $decoded_payload['email'];
 
 // Выполнение запроса к базе данных
 
-    $table = pg_query($db_connection, "SELECT * FROM taruch join tariffs on id_type = idtarif where idusers = '$user_id'");
+    $table = pg_query($db_connection, "SELECT * FROM operuch join operators on operid = opid join tariffs on tarid = idtarif where opid = '$user_id'");
             
     // Создание таблицы HTML
     echo "<tr valign = top><td width = 10 height = 10><img class=pfp src=no-image.jpg></td></td><td valign = bottom height = 10 width = 100>Login: $name</td><td valign=top width = 300 align=center rowspan=4><br><br>Активные услуги <br>";
     echo "<table align='center' width = 1000 cellspacing = '20px' style='background-color: #393e46;' border='1'>";
-    echo "<tr><th>ID тарифа</th><th>название тарифа</th><th>ФИО</th><th>Дата оплаты подписки</th><th>Дата истечения подписки</th><th align='center'>оставшиеся месяцы</th></tr>";
+    echo "<tr><th>ID подключенной услуги</th><th>тип подключенной услуги</th><th>название тарифа</th><th>Дата заключения договора</th></tr>";
     
     // Вывод данных из базы данных в таблицу HTML
     while ($rowt = pg_fetch_assoc($table)) {
-        echo "<tr><td align = center>" . $rowt['id'] . "</td><td align = center>" . $rowt['tar_name'] . "</td><td align = center>" . $rowt['secname'] . "</td><td align = center>" . $rowt['date'] . "</td><td align = center>" . $rowt['expiredate'] . "</td><td align = center>" . $rowt['extension'] . "</td></tr>";
+        echo "<tr><td align = center>" . $rowt['uchid'] . "</td><td align = center>" . $rowt['type'] . "</td><td align = center>" . $rowt['tar_name'] . "</td><td align = center>" . $rowt['date'] . "</td></tr>";
     }
     
     echo "</table>";
@@ -132,44 +132,7 @@ function jwt_decode($jwt, $key) {
               }
             </script>
         </form> 
-        
-        <tr><td align="center" valign = "top" colspan="2"><button class="lk-oplata" id="oplata" onclick="modalforoplata()">оплатить услуги</button></td></tr>
-        <div id="modaloplata" class="modal">
-            <!-- Содержимое модального окна -->
-            <div class="modal-content">
-              <span class="close" onclick="closeoplataModal()">&times;</span>
-              <form action="uslugextension.php" method="post">
-              <h2>Оплата имеющихся услуг</h2>
-              <!-- Добавьте здесь необходимые поля для смены пароля -->
-              введите ID услуги <br>
-              <input name="uslugid" type="number" id="uslugid" required ><br>
-              до какого числа услуга должна продлеваться ? <br>
-              <input name="updateusluguntil" type="date" id="updateusluguntil" required><br>
-               <br>
-              <button  type="submit" onclick="saveoplata()">Сохранить</button>
-            </div>
-        </div>
-          
-        <script>
-          // Функция для открытия модального окна
-          function modalforoplata()
-           {
-            document.getElementById("modaloplata").style.display = "block";
-          }
-          
-          // Функция для закрытия модального окна
-          function closeoplataModal() 
-          {
-            document.getElementById("modaloplata").style.display = "none";
-          }
-          
-          // Функция для сохранения нового пароля
-          function saveoplata() 
-          {
-            alert("Пароль успешно изменен! сейчас ваc вернет на страничку входа");
-            closeoplataModal();
-          }
-        </script>
+        <tr><td align="center" valign = "top" colspan="2"></td></tr>
     </form> 
     </table>
     <script src="app.js"></script>
